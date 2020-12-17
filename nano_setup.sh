@@ -2,7 +2,7 @@
 #initial setup - choose autologin otherwise it will cause problems later with lxdm:
 
 apt-get purge -y libreoffice*
-apt-get clean
+apt-get clean -y
 apt-get install -y python3-pip
 apt-get install -y tesseract-ocr
 yes | pip3 install  flask 
@@ -30,25 +30,27 @@ jupyter lab --generate-config
 #protip get ip address using:
 #$ifconfig
 #$jupyter notebook --ip=*
-
+############################################################################################################################################################################################
 #save ram by removing unity gui
 apt remove -y --purge ubuntu-desktop
 #Install lxdm display manager. It may prompt a dialog to choose a display manager. Choose lxdm
 apt install -y lxdm
 #you will get a prompt here
-apt remove --purge gdm3
-apt install -y lxde
-apt install -y lubuntu-desktop
-apt install -y --reinstall lxdm
-
+#manually run remainder of commands
+############################################################################################################################################################################################
+#apt remove -y --purge gdm3
+#apt install -y lxde
+#apt install -y lubuntu-desktop
+#apt install -y --reinstall lxdm
+############################################################################################################################################################################################
 #root on usb install
-git clone https://github.com/JetsonHacksNano/rootOnUSB
-cd rootOnUSB
-./addUSBToInitramfs.sh
-
+#git clone https://github.com/JetsonHacksNano/rootOnUSB
+#cd rootOnUSB
+#./addUSBToInitramfs.sh
+############################################################################################################################################################################################
 #shutdown and reboot with a monitor connected:
 #next use the disk manager/disks tool in the gui to deal with wiping the drive via format (yes all 0's is recommended) then create a partition and format as ext4 then mount.....
-
+############################################################################################################################################################################################
 #run shell to copy over crap
 #cd rootOnUSB
 
